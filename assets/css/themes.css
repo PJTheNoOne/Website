@@ -1,0 +1,156 @@
+/* ==========================================================================
+   THEMES
+   --------------------------------------------------------------------------
+   Every color, font and spacing decision on the site reads from these tokens.
+   To add a theme:
+     1. Copy one of the [data-theme="..."] blocks below and change the values.
+     2. Add its name to `themes` in assets/js/config.js so it shows in the picker.
+   The "auto" theme follows the visitor's OS light/dark setting.
+   ========================================================================== */
+
+:root {
+  /* ---- Type ---- */
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --font-mono: ui-monospace, "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-serif);
+
+  --text-base: 1.0625rem;      /* 17px */
+  --leading: 1.65;
+  --measure: 68ch;             /* max line length for prose */
+
+  /* ---- Shape & space ---- */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --space: 1rem;
+  --page-width: 72rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+
+  /* ---- Contour backdrop (read by assets/js/backdrop.js) ---- */
+  --contour-alpha: 0.13;       /* minor lines */
+  --contour-major-alpha: 0.24; /* every Nth "index" line */
+  --contour-mask: linear-gradient(to bottom, #000 0%, #000 55%, rgb(0 0 0 / 0.45) 100%);
+}
+
+/* ---------- Paper (light, default) ---------- */
+:root,
+[data-theme="paper"],
+[data-theme="auto"] {
+  color-scheme: light;
+  --bg: #fbfaf7;
+  --bg-elev: #ffffff;
+  --bg-sunk: #f2f0ea;
+  --text: #1f2328;
+  --text-muted: #5b6168;
+  --border: #e3e0d8;
+  --accent: #2f6f62;
+  --accent-hover: #245a4f;
+  --accent-contrast: #ffffff;
+  --accent-soft: #e3efeb;
+  --focus: #2f6f62;
+  --contour: #7d7362;
+  --shadow: 0 1px 2px rgb(30 30 20 / 0.06), 0 4px 16px rgb(30 30 20 / 0.05);
+}
+
+/* ---------- Ink (dark) ---------- */
+[data-theme="ink"] {
+  color-scheme: dark;
+  --bg: #13161a;
+  --bg-elev: #1b1f24;
+  --bg-sunk: #0f1215;
+  --text: #e7e4dd;
+  --text-muted: #9ba2a9;
+  --border: #2a3037;
+  --accent: #82c7b5;
+  --accent-hover: #a2d8ca;
+  --accent-contrast: #0f1a17;
+  --accent-soft: #1e2d2a;
+  --focus: #82c7b5;
+  --contour: #a7bccb;
+  --contour-alpha: 0.09;
+  --contour-major-alpha: 0.17;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px rgb(0 0 0 / 0.25);
+}
+
+/* "auto" uses Ink when the OS prefers dark. Keep in sync with the Ink block. */
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] {
+    color-scheme: dark;
+    --bg: #13161a;
+    --bg-elev: #1b1f24;
+    --bg-sunk: #0f1215;
+    --text: #e7e4dd;
+    --text-muted: #9ba2a9;
+    --border: #2a3037;
+    --accent: #82c7b5;
+    --accent-hover: #a2d8ca;
+    --accent-contrast: #0f1a17;
+    --accent-soft: #1e2d2a;
+    --focus: #82c7b5;
+    --contour: #a7bccb;
+    --contour-alpha: 0.09;
+    --contour-major-alpha: 0.17;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px rgb(0 0 0 / 0.25);
+  }
+}
+
+/* ---------- Survey (cream & sienna, like an old quad map) ---------- */
+[data-theme="survey"] {
+  color-scheme: light;
+  --bg: #f5f0e2;
+  --bg-elev: #fbf8ef;
+  --bg-sunk: #ebe4d1;
+  --text: #2b2620;
+  --text-muted: #6b6152;
+  --border: #ddd3bb;
+  --accent: #9a4a24;
+  --accent-hover: #7f3b1b;
+  --accent-contrast: #fffaf0;
+  --accent-soft: #f0dfcf;
+  --focus: #9a4a24;
+  --contour: #a8683a;
+  --contour-alpha: 0.2;
+  --contour-major-alpha: 0.36;
+  --font-body: var(--font-serif);
+}
+
+/* ---------- Fjord (cool blue-grey) ---------- */
+[data-theme="fjord"] {
+  color-scheme: light;
+  --bg: #eef2f5;
+  --bg-elev: #f9fbfc;
+  --bg-sunk: #e2e8ee;
+  --text: #1b2733;
+  --text-muted: #556473;
+  --border: #d3dce5;
+  --accent: #2b5f8c;
+  --accent-hover: #204a6e;
+  --accent-contrast: #ffffff;
+  --accent-soft: #dae6f1;
+  --focus: #2b5f8c;
+  --contour: #5f7f9e;
+  --contour-alpha: 0.16;
+  --contour-major-alpha: 0.28;
+  --font-heading: var(--font-sans);
+}
+
+/* ---------- Moss (dark green) ---------- */
+[data-theme="moss"] {
+  color-scheme: dark;
+  --bg: #151b17;
+  --bg-elev: #1c241f;
+  --bg-sunk: #101511;
+  --text: #e2e8dd;
+  --text-muted: #9cab99;
+  --border: #2a362e;
+  --accent: #b7d08f;
+  --accent-hover: #cde2aa;
+  --accent-contrast: #18200f;
+  --accent-soft: #263222;
+  --focus: #b7d08f;
+  --contour: #9ebd92;
+  --contour-alpha: 0.1;
+  --contour-major-alpha: 0.2;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px rgb(0 0 0 / 0.25);
+}

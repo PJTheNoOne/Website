@@ -1,0 +1,16 @@
+{
+  "_help": "One entry per course. Each deck is a folder under presentations/<course-id>/ containing index.html. Copy presentations/_template/ to start a new deck. href is relative to presentations/.",
+  "courses": [
+    {
+      "id": "sample-course",
+      "code": "COURSE 101",
+      "title": "Sample Course",
+      "term": "Fall 2026",
+      "description": "A short description of the course. The first deck shows off everything the slide engine can do.",
+      "decks": [
+        { "title": "Welcome & how these slides work", "href": "sample-course/01-welcome/", "date": "2026-09-02", "summary": "Course overview, plus a tour of slide features: steps, columns, code, notes, overview mode." },
+        { "title": "Slide template", "href": "_template/", "date": "", "summary": "The blank starting point for a new deck." }
+      ]
+    }
+  ]
+}

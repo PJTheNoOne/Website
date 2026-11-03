@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presentations · Your Name</title>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'auto'}catch(e){}</script>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/themes.css">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script type="module" src="../assets/js/site.js"></script>
+  <script type="module" src="../assets/js/pages/presentations.js"></script>
+</head>
+<!-- Edit the course list in data/presentations.json -->
+<body data-backdrop-seed="slides">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-title" href="../">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 15c2-6 7-10 12-9s7 6 5 10-9 4-13 2"/><path d="M8 14c1-3 4-5 7-4.5s4 3 3 5-5 2.5-8 1"/></svg>
+        Your Name
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../" data-home>About</a></li>
+          <li><a href="../gallery/">Gallery</a></li>
+          <li><a href="../presentations/">Presentations</a></li>
+          <li><a href="../tree/">Links</a></li>
+        </ul>
+      </nav>
+      <div data-theme-picker></div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <p class="eyebrow">Teaching</p>
+      <h1>Class presentations</h1>
+      <p class="lede">Slides for each class meeting. They open in the browser. Use the arrow keys to move,
+        <kbd>O</kbd> for an overview of all slides, and <kbd>F</kbd> for fullscreen. To get a PDF, print the deck.</p>
+      <div data-courses></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© <span data-year></span> Your Name</span>
+      <span><a href="../tools/heightmap/">Contour generator</a></span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome · COURSE 101</title>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'auto'}catch(e){}</script>
+  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/css/themes.css">
+  <link rel="stylesheet" href="../../../assets/slides/slides.css">
+  <script type="module" src="../../../assets/slides/slides.js"></script>
+</head>
+<body>
+<!--
+  data-home:          where the ⌂ button goes (the presentations index)
+  data-backdrop-seed: terrain for this deck's contour backdrop (any word or number)
+  data-backdrop="off" disables the backdrop
+-->
+<main class="deck" data-home="../../" data-backdrop-seed="course101-week1">
+
+  <section class="slide title">
+    <p class="eyebrow">COURSE 101 · Week 1</p>
+    <h1>Welcome to the course</h1>
+    <p class="subtitle">What we'll cover, how it works, and how these slides work</p>
+    <p class="meta">Your Name · Fall 2026</p>
+    <aside class="notes">
+      <p>Speaker notes go in an <code>&lt;aside class="notes"&gt;</code>. Press <strong>N</strong> to show them.</p>
+    </aside>
+  </section>
+
+  <section class="slide">
+    <h2>Today</h2>
+    <ul>
+      <li class="step">Introductions</li>
+      <li class="step">What this course is (and isn't)</li>
+      <li class="step">How you'll be assessed</li>
+      <li class="step">A first small exercise</li>
+    </ul>
+    <p class="muted small push">Items with <code>class="step"</code> appear one at a time as you press →.</p>
+    <aside class="notes"><p>Go around the room. Keep intros to name + one sentence.</p></aside>
+  </section>
+
+  <section class="slide">
+    <h2>Two columns</h2>
+    <div class="cols">
+      <div>
+        <h3>Left side</h3>
+        <p>Use <code>&lt;div class="cols"&gt;</code> for side-by-side content. Variants:
+          <code>wide-left</code>, <code>wide-right</code>, <code>three</code>.</p>
+      </div>
+      <div class="box">
+        <h3>In a box</h3>
+        <p>A <code>.box</code> gives a soft card for definitions, examples, or callouts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide section">
+    <p class="eyebrow">Part 2</p>
+    <h2>Section dividers let the terrain show through</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Code</h2>
+<pre><code>def contour_levels(n):
+    """Evenly spaced heights between 0 and 1."""
+    return [k / (n + 1) for k in range(1, n + 1)]
+
+print(contour_levels(4))   # [0.2, 0.4, 0.6, 0.8]</code></pre>
+    <p class="muted small">Plain <code>&lt;pre&gt;&lt;code&gt;</code>. Indentation inside <code>&lt;pre&gt;</code> is kept exactly as typed.</p>
+  </section>
+
+  <section class="slide center big">
+    <blockquote>
+      Maps are not the territory, but they are how we find our way through it.
+      <cite>A placeholder quote</cite>
+    </blockquote>
+  </section>
+
+  <section class="slide">
+    <h2>Steps can dim as you go</h2>
+    <ol>
+      <li class="step dim-after">Observe</li>
+      <li class="step dim-after">Hypothesize</li>
+      <li class="step dim-after">Test</li>
+      <li class="step dim-after">Revise</li>
+    </ol>
+    <p class="muted small push">Add <code>dim-after</code> to a step and it fades back once the next one appears.</p>
+  </section>
+
+  <section class="slide">
+    <h2>Tables &amp; images</h2>
+    <div class="cols wide-left">
+      <table>
+        <thead><tr><th>Week</th><th>Topic</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Welcome</td></tr>
+          <tr><td>2</td><td>Foundations</td></tr>
+          <tr><td>3</td><td>Practice</td></tr>
+        </tbody>
+      </table>
+      <figure>
+        <img src="../../../assets/img/portrait.svg" alt="Placeholder image">
+        <figcaption>Put images next to the deck and use relative paths.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="slide center">
+    <h2>Questions?</h2>
+    <p class="muted">Press <kbd>?</kbd> any time for keyboard shortcuts.</p>
+  </section>
+
+</main>
+</body>
+</html>
