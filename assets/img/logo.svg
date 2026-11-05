@@ -1,0 +1,12 @@
+<!-- Boulder logo. Themeable when inlined: the gradient reads the
+     logo-from / logo-to custom properties (falling back to accent / text-muted).
+     The same artwork is inlined in assets/js/site.js and used for assets/img/favicon.svg. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" stroke-linecap="square" stroke-linejoin="bevel">
+  <defs>
+    <linearGradient id="boulder-grad" x1="148.76" y1="196.67" x2="439.67" y2="433.95" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color: var(--logo-from, var(--accent, #2f6f62))"/>
+      <stop offset="1" style="stop-color: var(--logo-to, var(--text-muted, #5b6168))"/>
+    </linearGradient>
+  </defs>
+  <path transform="translate(420.5 -85.7) scale(0.95) rotate(71.918) translate(15.613 9.32)" stroke="url(#boulder-grad)" stroke-width="17.8" d="M 73.397453,395.84895 269.3742,55.731259 a 20.637886,20.637886 4.7641661 0 1 37.22253,3.10222 L 408.36912,332.16507 a 56.332211,56.332211 88.829847 0 1 0.75864,37.1407 l -15.39558,47.15289 a 45.113728,45.113728 144.04101 0 1 -42.8857,31.11141 H 103.28835 A 34.4979,34.4979 59.975332 0 1 73.397453,395.84895 Z"/>
+</svg>

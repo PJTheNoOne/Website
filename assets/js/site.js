@@ -45,7 +45,9 @@ export function backdropOptions(el = document.body) {
   return seed ? { ...backdrop, seed } : { ...backdrop };
 }
 
-const LOGO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 15c2-6 7-10 12-9s7 6 5 10-9 4-13 2"/><path d="M8 14c1-3 4-5 7-4.5s4 3 3 5-5 2.5-8 1"/></svg>';
+// Boulder logo (source: assets/img/logo.svg). Colors follow the theme; a theme can set
+// --logo-from and --logo-to to override them.
+const LOGO = '<svg viewBox="0 0 512 512" fill="none" stroke-linecap="square" stroke-linejoin="bevel" aria-hidden="true"><defs><linearGradient id="site-logo-grad" x1="148.76" y1="196.67" x2="439.67" y2="433.95" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color: var(--logo-from, var(--accent))"/><stop offset="1" style="stop-color: var(--logo-to, var(--text-muted))"/></linearGradient></defs><path transform="translate(420.5 -85.7) scale(0.95) rotate(71.918) translate(15.613 9.32)" stroke="url(#site-logo-grad)" stroke-width="38" d="M 73.397453,395.84895 269.3742,55.731259 a 20.637886,20.637886 4.7641661 0 1 37.22253,3.10222 L 408.36912,332.16507 a 56.332211,56.332211 88.829847 0 1 0.75864,37.1407 l -15.39558,47.15289 a 45.113728,45.113728 144.04101 0 1 -42.8857,31.11141 H 103.28835 A 34.4979,34.4979 59.975332 0 1 73.397453,395.84895 Z"/></svg>';
 
 /* Header, footer and page title come from data/site.yml so the name and menu live in one place. */
 function renderChrome(site) {

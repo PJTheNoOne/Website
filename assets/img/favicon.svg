@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2f6f62" stroke-width="2" stroke-linecap="round"><path d="M3 15c2-6 7-10 12-9s7 6 5 10-9 4-13 2"/><path d="M8 14c1-3 4-5 7-4.5s4 3 3 5-5 2.5-8 1"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" stroke-linecap="square" stroke-linejoin="bevel">
+  <style>
+    .a { stop-color: #2f6f62; } .b { stop-color: #5b6168; }
+    @media (prefers-color-scheme: dark) { .a { stop-color: #82c7b5; } .b { stop-color: #9ba2a9; } }
+  </style>
+  <defs><linearGradient id="g" x1="148.76" y1="196.67" x2="439.67" y2="433.95" gradientUnits="userSpaceOnUse"><stop class="a" offset="0"/><stop class="b" offset="1"/></linearGradient></defs>
+  <path transform="translate(420.5 -85.7) scale(0.95) rotate(71.918) translate(15.613 9.32)" stroke="url(#g)" stroke-width="38" d="M 73.397453,395.84895 269.3742,55.731259 a 20.637886,20.637886 4.7641661 0 1 37.22253,3.10222 L 408.36912,332.16507 a 56.332211,56.332211 88.829847 0 1 0.75864,37.1407 l -15.39558,47.15289 a 45.113728,45.113728 144.04101 0 1 -42.8857,31.11141 H 103.28835 A 34.4979,34.4979 59.975332 0 1 73.397453,395.84895 Z"/>
+</svg>
