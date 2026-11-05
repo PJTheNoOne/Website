@@ -1,14 +1,17 @@
 import { renderToCanvas, themeStyle } from '../contours.js';
 import { backdrop } from '../config.js';
+import { ROOT, loadYaml, esc, mdInline } from '../content.js';
 
-const ROOT = new URL('../../../', import.meta.url);
-const { items } = await fetch(new URL('data/gallery.json', ROOT)).then((r) => r.json());
+const page = await loadYaml('data/gallery.yml');
+const items = page.items || [];
+for (const [key, sel] of [['eyebrow', '[data-eyebrow]'], ['heading', '[data-heading]'], ['intro', '[data-intro]']]) {
+  if (page[key] != null) document.querySelector(sel).innerHTML = mdInline(page[key]);
+}
 
 const grid = document.querySelector('[data-gallery]');
 const filters = document.querySelector('[data-filters]');
 const dialog = document.querySelector('dialog.lightbox');
 const stage = dialog.querySelector('.stage');
-const esc = (s = '') => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
 /* ---------- placeholders: little contour maps in theme colours ---------- */
 let placeholders = [];
@@ -49,7 +52,7 @@ function renderGrid() {
     fig.append(btn);
     if (item.title || item.caption) {
       fig.insertAdjacentHTML('beforeend',
-        `<figcaption>${item.title ? `<strong>${esc(item.title)}</strong>` : ''}${item.title && item.caption ? ' — ' : ''}${esc(item.caption || '')}</figcaption>`);
+        `<figcaption>${item.title ? `<strong>${esc(item.title)}</strong>` : ''}${item.title && item.caption ? ' — ' : ''}${mdInline(item.caption || '')}</figcaption>`);
     }
     grid.append(fig);
   });
@@ -82,7 +85,7 @@ function open(i) {
     stage.append(placeholder(item, Math.max(200, Math.round(w))));
   }
   dialog.querySelector('.meta h2').textContent = item.title || '';
-  dialog.querySelector('.meta p').textContent = item.caption || '';
+  dialog.querySelector('.meta p').innerHTML = mdInline(item.caption || '');
   if (!dialog.open) dialog.showModal();
 }
 dialog.querySelector('.lb-close').addEventListener('click', () => dialog.close());

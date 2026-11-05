@@ -1,0 +1,44 @@
+# The link-tree page (/tree/).
+# Your name comes from data/site.yml.
+#
+# Each link has a label and an href, plus optional:
+#   icon:  one of link home user mail image slides code book map calendar
+#          video chat pen topo tool  (defined in assets/js/icons.js)
+#   note:  a smaller second line under the label
+
+bio: Teacher · photographer · map nerd
+portrait: assets/img/portrait.svg
+
+sections:
+  - title: On this site
+    links:
+      - label: About me
+        href: ./
+        icon: user
+      - label: Class presentations
+        href: presentations/
+        icon: slides
+        note: Slides for every course
+      # Gallery is hidden for now. Remove the # on the next three lines to show it again.
+      # - label: Gallery
+      #   href: gallery/
+      #   icon: image
+      - label: Contour generator
+        href: tools/heightmap/
+        icon: topo
+
+  - title: Elsewhere
+    links:
+      - label: Email
+        href: mailto:you@example.com
+        icon: mail
+      - label: GitHub
+        href: https://github.com/your-username
+        icon: code
+      - label: Office hours
+        href: https://example.com/calendar
+        icon: calendar
+        note: Book a time
+      - label: Reading list
+        href: https://example.com
+        icon: book

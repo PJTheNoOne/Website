@@ -1,0 +1,25 @@
+# Site-wide settings: your name, the menu, and the footer.
+# Every page reads this file, so a change here shows up everywhere.
+#
+# Links: a relative path (like gallery/) points into this site,
+# a full URL (https://…) points elsewhere.
+
+name: Your Name
+description: Teacher, maker, and map enthusiast.
+
+# The menu in the header, left to right.
+nav:
+  - label: About
+    href: ./
+  # Gallery is hidden for now. Remove the # on the next two lines to show it again.
+  # - label: Gallery
+  #   href: gallery/
+  - label: Presentations
+    href: presentations/
+  - label: Links
+    href: tree/
+
+# Links on the right side of the footer.
+footer:
+  - label: Contour generator
+    href: tools/heightmap/

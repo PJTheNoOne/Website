@@ -87,6 +87,69 @@ body.deck-body {
 .slide .small { font-size: .72em; }
 .slide .push { margin-top: auto; }
 
+/* ---------- Extra components ---------- */
+/* Italic one-liner under a slide heading */
+.slide .lede { font-size: 26px; font-style: italic; color: var(--text-muted); margin-top: -18px; }
+/* Small all-caps label above a block */
+.slide .label { font: 600 17px var(--font-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+/* Highlighted card: accent background */
+.slide .hl, .slide .flow > .hl, .slide .tiles > .hl { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.slide .hl h3, .slide .hl strong, .slide .hl p { color: var(--accent-contrast); }
+
+/* Process flow: boxes joined by arrows.  <div class="flow"><div>…</div><div class="hl">…</div></div>  Add "compact" for many steps. */
+.slide .flow { display: flex; align-items: stretch; }
+.slide .flow > * { flex: 1; position: relative; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px; text-align: center; display: grid; align-content: center; gap: 10px; }
+.slide .flow > * + * { margin-left: 72px; }
+.slide .flow > * + *::before { content: '→'; position: absolute; left: -54px; top: 50%; translate: 0 -50%; font-size: 40px; line-height: 1; color: var(--text-muted); }
+.slide .flow h3 { font-size: 30px; color: var(--text); }
+.slide .flow .hl h3, .slide .flow .hl p { color: var(--accent-contrast); }
+.slide .flow p { font-size: 22px; line-height: 1.35; color: var(--text-muted); }
+.slide .flow .icon { font-size: 44px; line-height: 1; color: var(--accent); }
+.slide .flow .hl .icon { color: var(--accent-contrast); }
+.slide .flow.compact > * { padding: 22px 16px; text-align: left; align-content: start; min-height: 150px; }
+.slide .flow.compact > * + * { margin-left: 30px; }
+.slide .flow.compact > * + *::before { left: -24px; font-size: 22px; }
+.slide .flow.compact .num { font: 700 24px var(--font-heading); color: var(--accent); }
+.slide .flow.compact .hl .num { color: var(--accent-contrast); }
+.slide .flow.compact p { font-size: 21px; color: var(--text); font-weight: 600; }
+.slide .flow.compact .hl p { color: var(--accent-contrast); }
+
+/* Numbered agenda with circled numbers: <ol class="agenda"><li><strong>Title</strong><span>detail</span></li></ol> */
+.slide ol.agenda { list-style: none; padding: 0; gap: 0; counter-reset: agenda; }
+.slide ol.agenda li { counter-increment: agenda; display: grid; grid-template-columns: 56px 1fr; column-gap: 28px; align-items: center; padding: 11px 0; border-bottom: 1px solid var(--border); }
+.slide ol.agenda li:last-child { border-bottom: 0; }
+.slide ol.agenda li::before { content: counter(agenda, decimal-leading-zero); grid-row: span 2; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--bg-sunk); border: 1px solid var(--border); font: 600 20px var(--font-sans); color: var(--text); }
+.slide ol.agenda li:first-child::before { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.slide ol.agenda strong { font: 600 28px var(--font-heading); color: var(--text); }
+.slide ol.agenda span { font-size: 21px; color: var(--text-muted); }
+
+/* Tiles: small titled boxes in a grid.  <div class="tiles"><div><strong>Title</strong><span>detail</span></div></div> */
+.slide .tiles { display: grid; grid-template-columns: repeat(var(--tile-cols, 2), 1fr); gap: 16px; }
+.slide .tiles > * { display: grid; gap: 2px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 14px 22px; }
+.slide .tiles strong { font-size: 24px; line-height: 1.3; color: var(--text); }
+.slide .tiles span { font-size: 19px; line-height: 1.35; color: var(--text-muted); }
+
+/* Rounded chips: <div class="chips"><span>SolidWorks</span>…</div> */
+.slide .chips { display: grid; grid-template-columns: repeat(var(--chip-cols, 2), 1fr); gap: 10px; }
+.slide .chips > * { border: 1.5px solid var(--border); border-radius: 999px; padding: 6px 16px; text-align: center; font: 600 20px var(--font-sans); }
+
+/* Term list with badges: <dl class="badges"><dt>STL</dt><dd>…</dd></dl> */
+.slide dl.badges { display: grid; grid-template-columns: auto 1fr; gap: 14px 22px; align-items: center; margin: 0; }
+.slide dl.badges dt { font: 600 20px var(--font-mono); background: var(--text); color: var(--bg); border-radius: 8px; padding: 8px 0; width: 90px; text-align: center; }
+.slide dl.badges dd { margin: 0; font-size: 22px; }
+
+/* Stacked layers graphic (a sliced pyramid) */
+.slide .layers { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.slide .layers i { display: block; height: 34px; width: calc(var(--w) * 1%); background: var(--accent); border-radius: 3px; }
+.slide .layers i:nth-child(even) { opacity: .7; }
+
+/* Link cards: <a class="link-card" href="…"><span class="icon">▷</span><span><strong>Name</strong><span>detail</span></span></a> */
+.slide .link-card { display: grid; grid-template-columns: 64px 1fr; gap: 28px; align-items: center; padding: 20px 28px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 14px; color: var(--text); text-decoration: none; }
+.slide .link-card:hover { border-color: var(--accent); }
+.slide .link-card .icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: var(--accent-contrast); font-size: 26px; }
+.slide .link-card strong { display: block; font: 600 30px var(--font-heading); color: var(--text); }
+.slide .link-card > span > span { display: block; font-size: 21px; line-height: 1.4; color: var(--text-muted); margin-top: 4px; }
+
 /* ---------- Incremental reveal ---------- */
 .slide .step { transition: opacity .3s ease, transform .3s ease; }
 .slide .step:not(.shown) { opacity: 0; transform: translateY(8px); }

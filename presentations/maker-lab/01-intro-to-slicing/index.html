@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intro to Slicing &amp; Printing · Maker Lab</title>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'auto'}catch(e){}</script>
+  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/css/themes.css">
+  <link rel="stylesheet" href="../../../assets/slides/slides.css">
+  <script type="module" src="../../../assets/slides/slides.js"></script>
+  <style>
+    /* Layout tweaks for this deck only. Shared components (.flow, .agenda, .tiles …) live in assets/slides/slides.css. */
+    .about .printers { gap: 12px; }
+    .about .printers > * { padding: 10px 20px; }
+    .about .photos { display: grid; gap: 14px; }
+    .about .photos figure { gap: 6px; }
+    .about .photos img { width: 100%; object-fit: cover; }
+    .about .photos .current img { height: 205px; object-position: center 45%; }
+    .about .photos .dads img { height: 165px; }
+    .dials .tiles { gap: 12px; }
+    .dials .tiles strong { font-size: 21px; }
+    .dials .tiles span { font-size: 17px; }
+    .slicer .layers { padding-top: 12px; }
+  </style>
+</head>
+<body>
+<main class="deck" data-home="../../" data-backdrop-seed="maker-lab-01">
+
+  <!-- 1 · Title -->
+  <section class="slide title">
+    <p class="eyebrow">Maker Lab · Session 01</p>
+    <h1>Intro to Slicing &amp; Printing</h1>
+    <p class="subtitle">From a digital idea to an object you can hold: how 3D models become 3D prints.</p>
+    <p class="meta">Course Introduction</p>
+  </section>
+
+  <!-- 2 · About me -->
+  <section class="slide about">
+    <h2>About Me <span class="muted" style="font-weight:400">· Paul Jacobson</span></h2>
+    <p class="lede">General nerd, from 3D printing to climbing.</p>
+    <div class="cols wide-right">
+      <div class="tiles printers" style="--tile-cols: 1">
+        <div><strong>10+ years printing</strong><span>Since my dad built his first 3D printer</span></div>
+        <div><strong>Artillery X1 Sidewinder</strong><span>First printer: the “potato chip”</span></div>
+        <div><strong>Voron 2.4</strong><span>Current printer</span></div>
+        <div><strong>Prusa XL</strong><span>Work printer, former employer</span></div>
+        <div><strong>Formlabs Form 3 (resin)</strong><span>Work printer, former employer</span></div>
+      </div>
+      <div class="photos">
+        <figure class="current">
+          <img src="voron.jpg" alt="Paul's current printer, a Voron 2.4 in an enclosure with its door open">
+          <figcaption><strong>Current 3D printer</strong>, a Voron 2.4</figcaption>
+        </figure>
+        <figure class="dads">
+          <img src="dads-printers.jpg" alt="A workbench with several 3D printers; Paul's first printer is on the left">
+          <figcaption><strong>Dad's printers</strong>: my first is on the left (since modified)</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Agenda -->
+  <section class="slide">
+    <h2>What This Course Covers</h2>
+    <p class="lede">Five stops between an idea and a finished print.</p>
+    <div class="cols wide-left" style="align-items: center">
+      <ol class="agenda">
+        <li><strong>Metaphysical → Physical</strong><span>How a 3D model becomes a real object.</span></li>
+        <li><strong>What is a 3D model?</strong><span>Digital files that encode shape.</span></li>
+        <li><strong>What is a 3D printer?</strong><span>FDM, resin, and a little history.</span></li>
+        <li><strong>What is a slicer?</strong><span>The software between model and machine.</span></li>
+        <li><strong>Slicing &amp; printer time</strong><span>Live demo, start to finish.</span></li>
+      </ol>
+      <blockquote>
+        “A 3D printer is just a very patient, very precise hot glue gun.”
+        <cite>— you, in about 30 minutes</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 4 · Pipeline -->
+  <section class="slide">
+    <h2>Metaphysical → Physical</h2>
+    <p class="lede">Three stages turn an idea into an object.</p>
+    <div class="flow" style="margin-top: 36px">
+      <div><span class="icon">●</span><h3>3D Model</h3><p>A digital file describing a shape in space</p></div>
+      <div><span class="icon">≡</span><h3>Slicer</h3><p>Turns the shape into layer-by-layer instructions</p></div>
+      <div class="hl"><span class="icon">▲</span><h3>Printing</h3><p>The printer follows those instructions, layer by layer</p></div>
+    </div>
+    <p class="muted push" style="text-align: center; font-style: italic; font-size: 24px">Everything in this course lives inside one of these three boxes.</p>
+  </section>
+
+  <!-- 5 · What is a 3D model? -->
+  <section class="slide">
+    <h2>What Is a 3D Model?</h2>
+    <p class="lede">A digital file that encodes a shape in three dimensions.</p>
+    <div class="cols">
+      <div style="display: grid; gap: 28px">
+        <p style="font-size: 25px">A 3D model is data, not an object yet: coordinates, surfaces, and volume, stored in a file format the next tool in the pipeline can read.</p>
+        <div>
+          <p class="label">File formats that matter here</p>
+          <dl class="badges">
+            <dt>STL</dt><dd>The universal print format: a mesh of triangles, nothing else</dd>
+            <dt>3MF</dt><dd>Modern successor to STL; adds color, materials, print settings</dd>
+            <dt>OBJ</dt><dd>Mesh format that can carry textures and color</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="box">
+        <p class="label">How they're created</p>
+        <p style="font-size: 21px; margin-bottom: 14px">CAD / parametric modeling: designing with numbers and math.</p>
+        <div class="chips">
+          <span>SolidWorks</span><span>Onshape</span>
+          <span>Fusion 360</span><span>Tinkercad</span>
+          <span>Blender</span><span>Plasticity</span>
+        </div>
+        <p class="label" style="margin-top: 26px">Get models instead of making them</p>
+        <p style="font-size: 22px">Free &amp; paid libraries, e.g. <a href="https://www.printables.com">printables.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · Activity -->
+  <section class="slide section">
+    <p class="eyebrow">Activity</p>
+    <h2>What Do We Want to Print?</h2>
+    <p style="max-width: 30ch; color: var(--text-muted)">Head to <a href="https://www.printables.com">printables.com</a> and pick one model as a class. We'll carry it through the whole pipeline: model → slicer → print.</p>
+    <ul style="font-size: 26px">
+      <li>Keep it simple</li>
+      <li>No supports needed (ideally)</li>
+      <li>Something we can print today</li>
+    </ul>
+  </section>
+
+  <!-- 7 · What is a 3D printer? -->
+  <section class="slide">
+    <h2>What Is a 3D Printer?</h2>
+    <p class="lede">A device that pulls a digital model out of the computer and into the physical world.</p>
+    <div class="flow">
+      <div><h3>Computer</h3><p>3D model file</p></div>
+      <div><h3>3D Printer</h3><p>Reads instructions, moves in 3 axes</p></div>
+      <div class="hl"><h3>Physical Part</h3><p>Built up layer by layer</p></div>
+    </div>
+    <div class="cols" style="font-size: 22px">
+      <div>
+        <p class="label">A glimpse of history</p>
+        <p>Charles Hull patented stereolithography (SLA) in 1986, the first practical 3D printing process. Desktop FDM printing took off decades later once key patents expired.</p>
+      </div>
+      <div>
+        <p class="label">Types you'll hear about</p>
+        <ul style="gap: 6px">
+          <li><strong>FDM</strong>: melts filament, layer by layer</li>
+          <li><strong>Resin</strong> (SLA/DLP/MSLA): cures liquid resin with light</li>
+          <li>…and a few more we'll touch on later</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · FDM vs resin -->
+  <section class="slide">
+    <h2>FDM vs. Resin</h2>
+    <p class="lede">The two printer types you'll meet most often.</p>
+    <div class="cols" style="font-size: 25px">
+      <div class="box">
+        <h3>FDM</h3>
+        <p class="muted small" style="margin-bottom: 16px"><em>Fused Deposition Modeling</em></p>
+        <ul>
+          <li>Melts plastic filament through a nozzle</li>
+          <li>Draws each layer like a hot glue gun</li>
+          <li>Cheap, sturdy, easy to maintain</li>
+          <li>Lower detail, visible layer lines</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Resin</h3>
+        <p class="muted small" style="margin-bottom: 16px"><em>SLA / DLP / MSLA</em></p>
+        <ul>
+          <li>Cures liquid resin with light, layer by layer</li>
+          <li>Excellent fine detail and smooth surfaces</li>
+          <li>Prints need washing + UV curing after</li>
+          <li>Messier; resin is toxic uncured</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · What is a slicer? -->
+  <section class="slide slicer">
+    <h2>What Is a Slicer?</h2>
+    <p class="lede">The software that turns a shape into instructions a printer can follow.</p>
+    <div class="cols wide-left" style="align-items: center">
+      <div style="display: grid; gap: 36px">
+        <blockquote style="font-size: 32px">An FDM printer is basically a glorified hot glue gun mounted on a computer-controlled arm.</blockquote>
+        <p style="font-size: 25px">So how do you turn a shape into instructions for that arm? First you slice the model into thin horizontal layers. Then, layer by layer, you trace the outline and fill it in. Repeat until the model is complete.</p>
+      </div>
+      <figure>
+        <div class="layers" aria-hidden="true">
+          <i style="--w: 14"></i><i style="--w: 24"></i><i style="--w: 34"></i><i style="--w: 44"></i><i style="--w: 54"></i>
+          <i style="--w: 64"></i><i style="--w: 74"></i><i style="--w: 84"></i><i style="--w: 94"></i>
+        </div>
+        <figcaption style="text-align: center"><em>sliced into layers</em></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 10 · More than slicing -->
+  <section class="slide dials">
+    <h2>It Does More Than Just Slice</h2>
+    <p class="lede">Supports, cooling, temperature, speed: lots of dials for a complex output.</p>
+    <div class="cols">
+      <div style="display: grid; gap: 18px">
+        <div class="tiles">
+          <div><strong>Plastic type</strong><span>PLA, PETG, ABS…</span></div>
+          <div><strong>Filament diameter</strong><span>usually 1.75 mm</span></div>
+          <div><strong>Layer height</strong><span>resolution vs. speed</span></div>
+          <div><strong>Printer properties</strong><span>bed size, nozzle, etc.</span></div>
+        </div>
+        <p class="muted" style="font-size: 19px"><em>(also: supports, cooling, extrusion temperature, extrusion rate…)</em></p>
+        <p style="font-size: 23px">Many different slicers exist, open-source and commercial, each with its own history and reputation. You'll develop opinions fast.</p>
+      </div>
+      <div class="box">
+        <p class="label">Slicers produce G-code</p>
+        <p style="font-size: 21px; margin-bottom: 14px">Plain-text commands that drive the printer like a CNC machine:</p>
+<pre style="font-size: 19px; padding: 18px 22px"><code>G28                ; home all axes
+M104 S210          ; set nozzle temp
+G1 X50 Y50 F3000   ; move into position
+G1 X80 E12         ; extrude while moving
+G1 Z0.2            ; move up one layer</code></pre>
+        <p class="muted" style="font-size: 19px; margin-top: 14px"><em>Every move, every temperature, every extrusion, spelled out one line at a time.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · Demo steps -->
+  <section class="slide">
+    <h2>Slicing Time &amp; Printer Time</h2>
+    <p class="lede">Live demo: from our chosen model to a running print.</p>
+    <div class="flow compact" style="margin-top: 40px">
+      <div><span class="num">1</span><p>First-time setup</p></div>
+      <div><span class="num">2</span><p>Select printer type</p></div>
+      <div><span class="num">3</span><p>Select filament</p></div>
+      <div><span class="num">4</span><p>Add model</p></div>
+      <div><span class="num">5</span><p>Slice</p></div>
+      <div><span class="num">6</span><p>Transfer file</p></div>
+      <div class="hl"><span class="num">7</span><p>Print!</p></div>
+    </div>
+    <p style="text-align: center; font-size: 24px; margin-top: 28px">We'll load the model we picked earlier, walk through each step live, and send it to the printer by the end of class.</p>
+  </section>
+
+  <!-- 12 · Resources -->
+  <section class="slide">
+    <p class="eyebrow">Keep learning</p>
+    <h2>Resources</h2>
+    <div style="display: grid; gap: 18px; max-width: 900px">
+      <a class="link-card" href="https://www.youtube.com/@CNCKitchen"><span class="icon">▷</span><span><strong>CNC Kitchen</strong><span>In-depth testing and tuning of printers, filaments, and settings on YouTube.</span></span></a>
+      <a class="link-card" href="https://www.youtube.com/@3DPrintingNerd"><span class="icon">▷</span><span><strong>3D Printing Nerd</strong><span>All things 3D printing, from beginner to advanced.</span></span></a>
+      <a class="link-card" href="https://www.youtube.com/@MakersMuse"><span class="icon">▷</span><span><strong>Maker's Muse</strong><span>In-depth videos about slicer settings and other tips and tricks.</span></span></a>
+    </div>
+    <p class="muted push" style="font-style: italic; font-size: 22px">Next class: we print the model we picked today. Bring questions.</p>
+  </section>
+
+</main>
+</body>
+</html>

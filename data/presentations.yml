@@ -1,0 +1,27 @@
+# The presentations page (/presentations/).
+#
+# One entry per course under "courses". Each deck's href is relative to the
+# presentations/ folder and can point at either kind of deck:
+#   maker-lab/01-intro-to-slicing/   an HTML deck (a folder with index.html)
+#   maker-lab/02-next-topic.md       a Markdown deck (a single .md file)
+# Start a new deck by copying presentations/_template.md (Markdown)
+# or presentations/_template/ (HTML).
+#
+# "date" is YYYY-MM-DD and can be left out.
+
+eyebrow: Teaching
+heading: Class presentations
+intro: >
+  Slides for each class meeting. They open in the browser. Use the arrow keys to move,
+  <kbd>O</kbd> for an overview of all slides, and <kbd>F</kbd> for fullscreen.
+  To get a PDF, print the deck.
+
+courses:
+  - id: maker-lab
+    code: MAKER LAB
+    title: Intro to 3D Printing
+    description: From a digital idea to an object you can hold. How 3D models become 3D prints.
+    decks:
+      - title: Intro to Slicing & Printing
+        href: maker-lab/01-intro-to-slicing/
+        summary: "Course introduction: 3D models, printers (FDM vs. resin), slicers and G-code, then a live slicing demo."

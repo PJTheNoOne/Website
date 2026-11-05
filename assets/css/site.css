@@ -246,3 +246,8 @@ main { flex: 1; padding-block: clamp(2rem, 6vw, 4.5rem); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Header and footer are filled in from data/site.yml; reserve their space so the page doesn't jump. */
+.site-header:empty { min-height: 3.75rem; }
+.site-footer:empty { min-height: 4.5rem; }
+.load-error { padding: 1rem 1.1rem; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius); background: var(--bg-elev); }

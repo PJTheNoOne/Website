@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gallery · Your Name</title>
+  <title>Gallery</title>
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'auto'}catch(e){}</script>
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/themes.css">
@@ -11,33 +11,17 @@
   <script type="module" src="../assets/js/site.js"></script>
   <script type="module" src="../assets/js/pages/gallery.js"></script>
 </head>
-<!-- Edit images in data/gallery.json -->
+<!-- Edit the text and images in data/gallery.yml -->
 <body data-backdrop-seed="gallery">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="wrap">
-      <a class="site-title" href="../">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 15c2-6 7-10 12-9s7 6 5 10-9 4-13 2"/><path d="M8 14c1-3 4-5 7-4.5s4 3 3 5-5 2.5-8 1"/></svg>
-        Your Name
-      </a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="../" data-home>About</a></li>
-          <li><a href="../gallery/">Gallery</a></li>
-          <li><a href="../presentations/">Presentations</a></li>
-          <li><a href="../tree/">Links</a></li>
-        </ul>
-      </nav>
-      <div data-theme-picker></div>
-    </div>
-  </header>
+  <header class="site-header" data-site-header></header>  <!-- name and menu: data/site.yml -->
 
   <main id="main">
     <div class="wrap">
-      <p class="eyebrow">Gallery</p>
-      <h1>Things I've seen and made</h1>
-      <p class="lede">Photographs, maps, and project snapshots. Select any image to view it larger.</p>
+      <p class="eyebrow" data-eyebrow></p>
+      <h1 data-heading></h1>
+      <p class="lede" data-intro></p>
       <div class="filters" data-filters role="group" aria-label="Filter by tag"></div>
       <div class="gallery" data-gallery></div>
     </div>
@@ -51,11 +35,6 @@
     <button class="lb-btn lb-next" type="button" aria-label="Next">›</button>
   </dialog>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <span>© <span data-year></span> Your Name</span>
-      <span><a href="../tools/heightmap/">Contour generator</a></span>
-    </div>
-  </footer>
+  <footer class="site-footer" data-site-footer></footer>
 </body>
 </html>

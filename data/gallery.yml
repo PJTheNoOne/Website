@@ -1,0 +1,64 @@
+# The gallery page (/gallery/).
+# Put images in assets/gallery/ and list them under "items" below.
+#
+# Each item:
+#   src:      path to the image, from the site root (assets/gallery/photo.jpg)
+#   thumb:    optional smaller version for the grid
+#   alt:      describe the image for screen readers
+#   title:    shown under the image
+#   caption:  optional; Markdown allowed (*italic*, [links](https://…))
+#   tags:     the filter buttons are built from these
+#
+# Items with "placeholder" instead of "src" draw a contour map from that word
+# ("aspect" is width ÷ height). Delete them once you add real photos.
+
+eyebrow: Gallery
+heading: Things I've seen and made
+intro: Photographs, maps, and project snapshots. Select any image to view it larger.
+
+items:
+  # A real photo looks like this:
+  # - src: assets/gallery/my-photo.jpg
+  #   alt: Fog over the river at dawn
+  #   title: River fog
+  #   caption: Taken from the bridge, October.
+  #   tags: [landscape]
+
+  - placeholder: ridge
+    aspect: 1.5
+    title: Ridgeline
+    caption: "Placeholder: replace with your own image."
+    tags: [landscape]
+
+  - placeholder: basin
+    aspect: 0.8
+    title: Basin
+    caption: Portrait-orientation placeholder.
+    tags: [landscape, maps]
+
+  - placeholder: delta
+    aspect: 1
+    title: Delta
+    caption: Square placeholder.
+    tags: [maps]
+
+  - placeholder: saddle
+    aspect: 1.33
+    title: Saddle
+    tags: [landscape]
+
+  - placeholder: cirque
+    aspect: 0.75
+    title: Cirque
+    caption: Tags drive the filter buttons above.
+    tags: [maps]
+
+  - placeholder: mesa
+    aspect: 1.6
+    title: Mesa
+    tags: [landscape, projects]
+
+  - placeholder: moraine
+    aspect: 1.2
+    title: Moraine
+    tags: [projects]
