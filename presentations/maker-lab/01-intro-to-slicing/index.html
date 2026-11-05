@@ -106,35 +106,58 @@
   <!-- 6 · What is a 3D model? -->
   <section class="slide">
     <h2>What Is a 3D Model?</h2>
-    <p class="lede">A digital file that encodes a shape in three dimensions.</p>
+    <p class="lede">A digital file that describes a shape in three dimensions.</p>
     <div class="cols">
       <div style="display: grid; gap: 28px">
-        <p style="font-size: 25px">A 3D model is data, not an object: coordinates, surfaces, and volume, stored as a file.</p>
+        <p style="font-size: 25px">A 3D model is data, not an object: points, edges, and surfaces stored as a file.</p>
         <div>
-          <p class="label">Common file formats that </p>
+          <p class="label">Common file formats</p>
           <dl class="badges">
-            <dt>STL</dt><dd>The universal print format: a mesh of triangles, nothing else</dd>
-            <dt>3MF</dt><dd>Modern successor to STL; adds color, materials, print settings</dd>
-            <dt>OBJ</dt><dd>Mesh format that can carry textures and color</dd>
+            <dt>STL</dt><dd>The classic print format: a mesh of triangles. No color, no units.</dd>
+            <dt>3MF</dt><dd>Modern replacement for STL: units, color, materials, even print settings</dd>
+            <dt>OBJ</dt><dd>Mesh that can carry color and textures (in a companion .mtl file)</dd>
+            <dt>STEP</dt><dd>Exact CAD geometry for sharing between CAD programs; most slicers can import it</dd>
           </dl>
         </div>
       </div>
       <div class="box">
-        <p class="label">How they're created</p>
-        <p style="font-size: 21px; margin-bottom: 14px">CAD / parametric modeling: designing with numbers and math.</p>
-        <div class="chips">
-          <span>SolidWorks</span><span>Onshape</span>
-          <span>Fusion 360</span><span>Tinkercad</span>
-          <span>Blender</span><span>Plasticity</span>
+        <p class="label">Get models instead of making them</p>
+        <p style="font-size: 22px; margin-bottom: 18px">Huge free (and paid) libraries of ready-to-print models:</p>
+        <div class="chips" style="--chip-cols: 1">
+          <span><a href="https://www.printables.com">printables.com</a></span>
+          <span><a href="https://makerworld.com">makerworld.com</a></span>
+          <span><a href="https://www.thingiverse.com">thingiverse.com</a></span>
         </div>
-        <p class="label" style="margin-top: 26px">Get models instead of making them</p>
-        <p style="font-size: 22px; margin-bottom: 14px">Free &amp; paid libraries, e.g. <a href="https://www.printables.com">printables.com</a></p>
-        <p style="font-size: 18px">plasticity.xyz · Blender (free)</p>
+        <p class="muted" style="font-size: 19px; margin-top: 18px"><em>STL is still the most common download, but 3MF is catching up.</em></p>
       </div>
     </div>
   </section>
 
-  <!-- 7 · What is a 3D printer? -->
+  <!-- 7 · How models are created -->
+  <section class="slide">
+    <h2>How Are 3D Models Created?</h2>
+    <p class="lede">Design it, sculpt it, scan it, and now, ask an AI for it.</p>
+    <div class="cols">
+      <div class="tiles" style="--tile-cols: 1; gap: 12px">
+        <div><strong>Parametric CAD</strong><span>Design with dimensions &amp; constraints: SolidWorks, Onshape, Fusion, FreeCAD</span></div>
+        <div><strong>Shape-based / direct modeling</strong><span>Push, pull &amp; combine shapes: Tinkercad, Plasticity</span></div>
+        <div><strong>Mesh modeling &amp; sculpting</strong><span>Organic shapes, art &amp; characters: Blender, ZBrush</span></div>
+        <div><strong>3D scanning</strong><span>Capture a real object as a mesh (scanner or photogrammetry)</span></div>
+      </div>
+      <div class="box">
+        <p class="label">New: AI is starting to do the CAD</p>
+        <ul style="font-size: 20px; gap: 10px">
+          <li><strong>Zoo Text-to-CAD</strong>: describe a part, get an editable CAD model</li>
+          <li><strong>Adam</strong>: chat-based CAD copilot</li>
+          <li><strong>Backflip</strong>: turns scans &amp; meshes into editable CAD</li>
+          <li><strong><a href="https://www.cnckitchen.com/blog/scanruler-free-3d-scan-reverse-engineering">ScanRuler</a></strong> (CNC Kitchen, free): an AI agent reverse-engineers a 3D scan into a parametric STEP file</li>
+        </ul>
+        <p class="muted" style="font-size: 19px; margin-top: 14px"><em>Great for simple parts; still struggles with complex ones. Always check the dimensions.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · What is a 3D printer? -->
   <section class="slide">
     <h2>What Is a 3D Printer?</h2>
     <p class="lede">A machine that follows instructions: one at a time, exactly as written.</p>
@@ -162,7 +185,7 @@
     </div>
   </section>
 
-  <!-- 8 · FDM vs resin -->
+  <!-- 9 · FDM vs resin -->
   <section class="slide">
     <h2>FDM vs. Resin</h2>
     <p class="lede">The two printer types you'll meet most often.</p>
@@ -190,7 +213,7 @@
     </div>
   </section>
 
-  <!-- 9 · What is a slicer? -->
+  <!-- 10 · What is a slicer? -->
   <section class="slide slicer">
     <h2>What Is a Slicer?</h2>
     <p class="lede">The software that turns a shape into instructions a printer can follow.</p>
@@ -209,7 +232,7 @@
     </div>
   </section>
 
-  <!-- 10 · More than slicing -->
+  <!-- 11 · More than slicing -->
   <section class="slide dials">
     <h2>It Does More Than Just Slice</h2>
     <p class="lede">Supports, cooling, temperature, speed: lots of dials for a complex output.</p>
@@ -237,7 +260,7 @@ G1 Z0.2            ; move up one layer</code></pre>
     </div>
   </section>
 
-  <!-- 11 · Demo steps -->
+  <!-- 12 · Demo steps -->
   <section class="slide">
     <h2>Slicing Time &amp; Printer Time</h2>
     <p class="lede">Live demo: from our chosen model to a running print.</p>
@@ -253,7 +276,7 @@ G1 Z0.2            ; move up one layer</code></pre>
     <p style="text-align: center; font-size: 24px; margin-top: 28px">We'll load the model we picked earlier, walk through each step live, and send it to the printer by the end of class.</p>
   </section>
 
-  <!-- 12 · Resources -->
+  <!-- 13 · Resources -->
   <section class="slide">
     <p class="eyebrow">Keep learning</p>
     <h2>Resources</h2>
