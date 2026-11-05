@@ -4,10 +4,10 @@
 
 eyebrow: Hello, I'm
 lede: >
-  I teach *subject* at *Institution*, and spend the rest of my time on
-  photography, maps, and whatever I'm currently tinkering with. This is where
-  I keep my class materials and a few things I've made.
-portrait: assets/img/portrait.svg
+  I'm an engineer at Watlow and teach intro 3D printing classes at the
+  [Winona Creators Collective](https://winonacreators.org) in Winona, MN.
+  This is where I keep my class materials and a few things I've made.
+portrait: assets/img/portrait.jpg
 
 buttons:
   - label: Class presentations
@@ -25,20 +25,20 @@ cards:
     text: From a digital idea to an object you can hold. How 3D models become 3D prints.
     link: Slides →
     href: presentations/#maker-lab
-  - eyebrow: COURSE 201
-    title: Another Course
-    text: Replace or delete these cards in `content/about.md`.
-    link: Slides →
-    href: presentations/
   - eyebrow: Elsewhere
     title: Get in touch
-    text: Email, office hours, and other places to find me are on the [links page](tree/).
+    text: A contact form, GitHub, LinkedIn, and other places to find me are on the [links page](tree/).
 ---
 
 ## About me
 
-Write a few short paragraphs here. Who you are, what you teach and why you like it, and what
-you're working on now. Keep it plain; the page is meant to be read.
+I've been 3D printing for over ten years, ever since my dad built his first printer. These days
+I run a Voron 2.4 at home and help run the 3D printing and electronics prototyping space at the
+Winona Creators Collective.
 
-A second paragraph might cover background: where you studied, what you did before teaching,
-or the questions you keep coming back to.
+I studied Engineering Physics with a minor in Computer Science at UW–Platteville, where I was
+president of the Pioneer Drone Club and built and flew FPV drones. Now I'm an engineer at Watlow,
+supporting industrial and process controls.
+
+When I'm not at a keyboard or a printer, I'm usually bouldering, sport climbing, or hiking around
+the bluffs.

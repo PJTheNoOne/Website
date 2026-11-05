@@ -19,7 +19,7 @@ COURSE · Week N
 
 Subtitle
 
-Your Name · Date
+Paul Jacobson · Date
 
 ---
 
