@@ -68,13 +68,13 @@
       <ol class="agenda">
         <li><strong>Metaphysical → Physical</strong><span>How a 3D model becomes a real object.</span></li>
         <li><strong>What is a 3D model?</strong><span>Digital files that encode shape.</span></li>
-        <li><strong>What is a 3D printer?</strong><span>FDM, resin, and a little history.</span></li>
+        <li><strong>What is a 3D printer?</strong><span>A machine that follows instructions.</span></li>
         <li><strong>What is a slicer?</strong><span>The software between model and machine.</span></li>
         <li><strong>Slicing &amp; printer time</strong><span>Live demo, start to finish.</span></li>
       </ol>
       <blockquote>
-        “A 3D printer is just a very patient, very precise hot glue gun.”
-        <cite>— you, in about 30 minutes</cite>
+        “A 3D printer is just a glorified hot glue gun.”
+        <!-- <cite>— you, in about 30 minutes</cite> -->
       </blockquote>
     </div>
   </section>
@@ -88,18 +88,30 @@
       <div><span class="icon">≡</span><h3>Slicer</h3><p>Turns the shape into layer-by-layer instructions</p></div>
       <div class="hl"><span class="icon">▲</span><h3>Printing</h3><p>The printer follows those instructions, layer by layer</p></div>
     </div>
-    <p class="muted push" style="text-align: center; font-style: italic; font-size: 24px">Everything in this course lives inside one of these three boxes.</p>
+    <!-- <p class="muted push" style="text-align: center; font-style: italic; font-size: 24px">Everything in this course lives inside one of these three boxes.</p> -->
   </section>
 
-  <!-- 5 · What is a 3D model? -->
+  <!-- 5 · Activity -->
+  <section class="slide section">
+    <p class="eyebrow">Activity</p>
+    <h2>What Do We Want to Print?</h2>
+    <p style="max-width: 30ch; color: var(--text-muted)">Head to <a href="https://www.printables.com">printables.com</a> and pick one model as a class. We'll carry it through the whole pipeline: model → slicer → print.</p>
+    <ul style="font-size: 26px">
+      <li>Keep it simple</li>
+      <li>No supports needed (ideally)</li>
+      <li>Something we can print today</li>
+    </ul>
+  </section>
+
+  <!-- 6 · What is a 3D model? -->
   <section class="slide">
     <h2>What Is a 3D Model?</h2>
     <p class="lede">A digital file that encodes a shape in three dimensions.</p>
     <div class="cols">
       <div style="display: grid; gap: 28px">
-        <p style="font-size: 25px">A 3D model is data, not an object yet: coordinates, surfaces, and volume, stored in a file format the next tool in the pipeline can read.</p>
+        <p style="font-size: 25px">A 3D model is data, not an object: coordinates, surfaces, and volume, stored as a file.</p>
         <div>
-          <p class="label">File formats that matter here</p>
+          <p class="label">Common file formats that </p>
           <dl class="badges">
             <dt>STL</dt><dd>The universal print format: a mesh of triangles, nothing else</dd>
             <dt>3MF</dt><dd>Modern successor to STL; adds color, materials, print settings</dd>
@@ -116,44 +128,36 @@
           <span>Blender</span><span>Plasticity</span>
         </div>
         <p class="label" style="margin-top: 26px">Get models instead of making them</p>
-        <p style="font-size: 22px">Free &amp; paid libraries, e.g. <a href="https://www.printables.com">printables.com</a></p>
+        <p style="font-size: 22px; margin-bottom: 14px">Free &amp; paid libraries, e.g. <a href="https://www.printables.com">printables.com</a></p>
+        <p style="font-size: 18px">plasticity.xyz · Blender (free)</p>
       </div>
     </div>
-  </section>
-
-  <!-- 6 · Activity -->
-  <section class="slide section">
-    <p class="eyebrow">Activity</p>
-    <h2>What Do We Want to Print?</h2>
-    <p style="max-width: 30ch; color: var(--text-muted)">Head to <a href="https://www.printables.com">printables.com</a> and pick one model as a class. We'll carry it through the whole pipeline: model → slicer → print.</p>
-    <ul style="font-size: 26px">
-      <li>Keep it simple</li>
-      <li>No supports needed (ideally)</li>
-      <li>Something we can print today</li>
-    </ul>
   </section>
 
   <!-- 7 · What is a 3D printer? -->
   <section class="slide">
     <h2>What Is a 3D Printer?</h2>
-    <p class="lede">A device that pulls a digital model out of the computer and into the physical world.</p>
-    <div class="flow">
-      <div><h3>Computer</h3><p>3D model file</p></div>
-      <div><h3>3D Printer</h3><p>Reads instructions, moves in 3 axes</p></div>
-      <div class="hl"><h3>Physical Part</h3><p>Built up layer by layer</p></div>
-    </div>
-    <div class="cols" style="font-size: 22px">
-      <div>
-        <p class="label">A glimpse of history</p>
-        <p>Charles Hull patented stereolithography (SLA) in 1986, the first practical 3D printing process. Desktop FDM printing took off decades later once key patents expired.</p>
+    <p class="lede">A machine that follows instructions: one at a time, exactly as written.</p>
+    <div class="cols wide-left" style="align-items: center">
+      <div style="display: grid; gap: 26px">
+        <p style="font-size: 25px">A printer has no idea it's making a phone stand or a dragon. It only knows the <strong>next instruction</strong>, and it does just a handful of things:</p>
+        <div class="tiles" style="--tile-cols: 3">
+          <div><strong>Move</strong><span>along X, Y &amp; Z</span></div>
+          <div><strong>Heat</strong><span>nozzle &amp; bed</span></div>
+          <div class="hl"><strong>Extrude</strong><span>push out plastic</span></div>
+        </div>
+        <p class="muted" style="font-size: 21px"><em>Good instructions → good print. Bad instructions → spaghetti. The printer can't tell the difference.</em></p>
       </div>
-      <div>
-        <p class="label">Types you'll hear about</p>
-        <ul style="gap: 6px">
-          <li><strong>FDM</strong>: melts filament, layer by layer</li>
-          <li><strong>Resin</strong> (SLA/DLP/MSLA): cures liquid resin with light</li>
-          <li>…and a few more we'll touch on later</li>
-        </ul>
+      <div class="box">
+        <p class="label">The printer's to-do list</p>
+        <ol style="font-size: 21px; gap: 8px">
+          <li>Go to the home position</li>
+          <li>Heat the nozzle to 210 °C</li>
+          <li>Move to the starting point</li>
+          <li>Move right 30 mm while pushing out plastic</li>
+          <li>Raise up one layer</li>
+        </ol>
+        <p class="muted" style="font-size: 19px; margin-top: 14px"><em>…repeat for thousands of lines. So who writes the list? That's the slicer.</em></p>
       </div>
     </div>
   </section>
@@ -218,7 +222,7 @@
           <div><strong>Printer properties</strong><span>bed size, nozzle, etc.</span></div>
         </div>
         <p class="muted" style="font-size: 19px"><em>(also: supports, cooling, extrusion temperature, extrusion rate…)</em></p>
-        <p style="font-size: 23px">Many different slicers exist, open-source and commercial, each with its own history and reputation. You'll develop opinions fast.</p>
+        <p style="font-size: 23px">Many different slicers exist, but most are forks of a single open-source project. I'd recommend Orca-Slicer.</p>
       </div>
       <div class="box">
         <p class="label">Slicers produce G-code</p>
